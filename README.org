@@ -58,7 +58,7 @@ herd stop dtao-guile
 herd restart dtao-guile
 #+end_src
 
-Logs are available at =$XDG_LOG_HOME/dtao-guile.log= (logs will be saved to your home directory if =$XDG_LOG_HOME= is not set).
+Logs are available at =$XDG_STATE_HOME/log/dtao-guile.log= (logs will be saved to =$HOME/.local/state/log/dtao-guile.log= if =$XDG_STATE_HOME= is not set).
 
 *** Configuring =dtao-guile=
 

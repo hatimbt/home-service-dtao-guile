@@ -110,8 +110,10 @@
            #$(file-append (home-dtao-guile-configuration-package config) "/bin/dtao-guile")
            "-c" #$(string-append config-dir "/config.scm"))
           #:user (getenv "USER")
-          #:log-file #$(string-append (or (getenv "XDG_LOG_HOME") (getenv "HOME"))
-                                      "/dtao-guile.log"))))
+          #:log-file #$(format #f "~a/log/dtao-guile.log"
+                           (or (getenv "XDG_STATE_HOME")
+                               (format #f "~a/.local/state"
+                                       (getenv "HOME")))))))
     (stop #~(make-kill-destructor)))))
 
 (define (home-dtao-guile-extensions cfg extensions)
